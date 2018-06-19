@@ -86,10 +86,31 @@
 			</distributionManagement>
 		</profile>
 		<!-- 支持混淆的Profile，不生成source -->
-		<!-- <profile> <id>obfuscated</id> <distributionManagement> <snapshotRepository> <id>repo</id> <url>http://101.132.40.129:18081/nexus/content/repositories/outter-snapshots</url> 
-			</snapshotRepository> <repository> <id>repo</id> <url>http://101.132.40.129:18081/nexus/content/repositories/outter-releases</url> </repository> </distributionManagement> 
-			<build> <pluginManagement> <plugins> <plugin> <artifactId>maven-source-plugin</artifactId> <configuration> <skipSource>true</skipSource> </configuration> 
-			</plugin> </plugins> </pluginManagement> </build> </profile> -->
+		<!-- <profile>
+			<id>obfuscated</id>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>repo</id>
+					<url>http://dev.aceistar.com:18081/nexus/content/repositories/outter-snapshots</url>
+				</snapshotRepository>
+				<repository>
+					<id>repo</id>
+					<url>http://dev.aceistar.com:18081/nexus/content/repositories/outter-releases</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>maven-source-plugin</artifactId>
+							<configuration>
+								<skipSource>true</skipSource>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile> -->
 	</profiles>
 
 	<dependencyManagement>
