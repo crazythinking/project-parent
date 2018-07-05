@@ -29,9 +29,6 @@
 		<!-- drools -->
 		<drools.version>5.6.0.Final</drools.version>
 
-		<!-- jasreport -->
-		<!-- <jasper.reports.version>5.5.1</jasper.reports.version> -->
-
 		<!-- mina -->
 		<mina.core.version>2.0.7</mina.core.version>
 		<mina.integration.spring.version>1.1.7</mina.integration.spring.version>
@@ -44,9 +41,6 @@
 
 		<!-- apache commons -->
 		<commons.daemon.version>1.0.10</commons.daemon.version>
-		<!-- <commons.net.version>3.2</commons.net.version> -->
-		<!-- <commons.fileupload.version>1.3.2</commons.fileupload.version> -->
-		<!-- <commons.codec.version>1.7</commons.codec.version> -->
 		<commons-email.version>1.3.2</commons-email.version>
 
 		<ibator.version>1.2.1.681</ibator.version>
@@ -108,7 +102,7 @@
 			<dependency>
 				<groupId>net.sf.jasperreports</groupId>
 				<artifactId>jasperreports</artifactId>
-				<!-- <version>${jasper.reports.version}</version> -->
+				<version>${jasperreports.version}</version>
 				<exclusions>
 					<!-- 这里的commons-collections 2.1会与hibernate冲突，等某天它改为3后再说 -->
 					<exclusion>
@@ -146,17 +140,17 @@
 			<dependency>
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
-				<!-- <version>${commons.net.version}</version> -->
+				<version>${commons-net.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
-				<!-- <version>${commons.fileupload.version}</version> -->
+				<version>${commons-fileupload.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>
-				<!-- <version>${commons.codec.version}</version> -->
+				<version>${commons-codec.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
