@@ -27,11 +27,11 @@
 		<fastjson.version>1.2.46</fastjson.version>
 		
 		<!-- drools -->
-		<drools.version>5.6.0.Final</drools.version>
+		<!-- <drools.version>5.6.0.Final</drools.version> -->
 
 		<!-- mina -->
-		<mina.core.version>2.0.7</mina.core.version>
-		<mina.integration.spring.version>1.1.7</mina.integration.spring.version>
+		<!-- <mina.core.version>2.0.7</mina.core.version>
+		<mina.integration.spring.version>1.1.7</mina.integration.spring.version> -->
 
 		<!-- maven -->
 		<maven.plugin.api.version>2.2.1</maven.plugin.api.version>
@@ -42,11 +42,15 @@
 		<!-- apache commons -->
 		<commons.daemon.version>1.0.10</commons.daemon.version>
 		<commons-email.version>1.3.2</commons-email.version>
+		<commons-collections4.version>4.2</commons-collections4.version>
 
 		<ibator.version>1.2.1.681</ibator.version>
 
 		<!-- LMAX -->
 		<disruptor.version>3.3.5</disruptor.version>
+		
+		<!-- RocketMQ -->
+		<rocketmq.version>4.3.0</rocketmq.version>
 
 		<!-- 测试相关 -->
 		<easymock.version>3.0</easymock.version>
@@ -65,16 +69,17 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<id>repo</id>
+			<!-- <id>zebra</id> -->
 			<distributionManagement>
 				<snapshotRepository>
 					<id>repo</id>
-					<!-- <url>http://172.28.0.124:8081/nexus/content/repositories/snapshots</url> -->
+					<!-- <id>zebra</id> -->
 					<!-- <url>http://118.242.36.102:6474/nexus/content/repositories/snapshots</url> -->
 					<url>https://dev.aceistar.com:18081/nexus/content/repositories/snapshots</url>
 				</snapshotRepository>
 				<repository>
 					<id>repo</id>
-					<!-- <url>http://172.28.0.124:8081/nexus/content/repositories/releases</url> -->
+					<!-- <id>zebra</id> -->
 					<!-- <url>http://118.242.36.102:6474/nexus/content/repositories/releases</url> -->
 					<url>https://dev.aceistar.com:18081/nexus/content/repositories/releases</url>
 				</repository>
@@ -113,7 +118,7 @@
 			</dependency>
 
 			<!-- Drools 相关 -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.drools</groupId>
 				<artifactId>drools-spring</artifactId>
 				<version>${drools.version}</version>
@@ -122,10 +127,10 @@
 				<groupId>org.drools</groupId>
 				<artifactId>drools-core</artifactId>
 				<version>${drools.version}</version>
-			</dependency>
+			</dependency> -->
 
 			<!-- MINA -->
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.apache.mina</groupId>
 				<artifactId>mina-core</artifactId>
 				<version>${mina.core.version}</version>
@@ -134,8 +139,8 @@
 				<groupId>org.apache.mina</groupId>
 				<artifactId>mina-integration-spring</artifactId>
 				<version>${mina.integration.spring.version}</version>
-			</dependency>
-
+			</dependency> -->
+			
 			<!-- apache commons 库 -->
 			<dependency>
 				<groupId>commons-net</groupId>
@@ -162,6 +167,17 @@
 				<groupId>commons-daemon</groupId>
 				<artifactId>commons-daemon</artifactId>
 				<version>${commons.daemon.version}</version>
+			</dependency>
+			<dependency>
+	            <groupId>org.apache.commons</groupId>
+	            <artifactId>commons-collections4</artifactId>
+	            <version>${commons-collections4.version}</version>
+	        </dependency>
+	        
+	        <dependency>
+			    <groupId>org.apache.rocketmq</groupId>
+			    <artifactId>rocketmq-client</artifactId>
+			    <version>${rocketmq.version}</version>
 			</dependency>
 
 			<!-- 其它特定功能库 -->
