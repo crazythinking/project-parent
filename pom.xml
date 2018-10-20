@@ -12,7 +12,7 @@
 	<groupId>net.engining.project</groupId>
 	<artifactId>project-parent</artifactId>
 	<!-- 版本号用两个数字编，这样可以避免与任何产品相同而报warning，同时对于这样的纯parent项目来说，太细的版本号也没有意义 -->
-	<version>3.3-SNAPSHOT</version>
+	<version>3.3.RELEASE</version>
 	<packaging>pom</packaging>
 	<name>依赖项管理框架</name>
 	<description>
@@ -57,8 +57,8 @@
 	</properties>
 
 	<!-- <scm>
-		<connection>scm:http://101.132.40.129/svn/repositories/smartstar/branches/project-3.3-SNAPSHOT</connection>
-		<developerConnection>scm:http://101.132.40.129/svn/repositories/smartstar/branches/project-3.3-SNAPSHOT</developerConnection>
+		<connection>scm:http://101.132.40.129/svn/repositories/smartstar/branches/project-3.3.RELEASE</connection>
+		<developerConnection>scm:http://101.132.40.129/svn/repositories/smartstar/branches/project-3.3.RELEASE</developerConnection>
 	</scm> -->
 	<!-- <issueManagement> <system>Mantis</system> <url>http://repo/mantis</url> </issueManagement> <ciManagement> <system>Jenkins</system> <url>http://repo/jenkins</url> 
 		</ciManagement> -->
