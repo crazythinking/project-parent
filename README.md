@@ -1,4 +1,5 @@
 # project-parent
 **parent of maven project**    
 
-based on io.spring.platform:platform-bom:Brussels-SR11
+based on org.springframework.boot:spring-boot-starter-parent:2.0.1.RELEASE
+向spring boot 2.x 升级
