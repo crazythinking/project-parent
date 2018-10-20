@@ -5,7 +5,7 @@ git push --set-upstream origin dev-3.3
 # 批量修改pom文件版本为相应RELEASE
 sed -i "s/3.3-SNAPSHOT/3.3.RELEASE/g" pom.xml */pom.xml */*/pom.xml
 # 编译打包RELEASE
-# mvn clean deploy
+mvn clean deploy
 # 创建相应版本的RELEASE tag
 git tag -a v3.3.RELEASE -m "3.3版本"
 # 重新checkout到master
