@@ -12,7 +12,7 @@
 	<groupId>net.engining.project</groupId>
 	<artifactId>project-parent</artifactId>
 	<!-- 版本号用两个数字编，这样可以避免与任何产品相同而报warning，同时对于这样的纯parent项目来说，太细的版本号也没有意义 -->
-	<version>3.3.RELEASE</version>
+	<version>3.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>依赖项管理框架</name>
 	<description>
@@ -43,6 +43,7 @@
 		<commons.daemon.version>1.0.10</commons.daemon.version>
 		<commons-email.version>1.3.2</commons-email.version>
 		<commons-collections4.version>4.2</commons-collections4.version>
+		<commons-io.version>2.5</commons-io.version>
 
 		<ibator.version>1.2.1.681</ibator.version>
 
@@ -68,20 +69,15 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<id>repo</id>
-			<!-- <id>zebra</id> -->
+			<id>zebra</id>
 			<distributionManagement>
 				<snapshotRepository>
-					<id>repo</id>
-					<!-- <id>zebra</id> -->
-					<!-- <url>http://118.242.36.102:6474/nexus/content/repositories/snapshots</url> -->
-					<url>https://dev.aceistar.com:18081/nexus/content/repositories/snapshots</url>
+					<id>zebra</id>
+					<url>http://118.242.36.102:6474/nexus/content/repositories/snapshots</url>
 				</snapshotRepository>
 				<repository>
-					<id>repo</id>
-					<!-- <id>zebra</id> -->
-					<!-- <url>http://118.242.36.102:6474/nexus/content/repositories/releases</url> -->
-					<url>https://dev.aceistar.com:18081/nexus/content/repositories/releases</url>
+					<id>zebra</id>
+					<url>http://118.242.36.102:6474/nexus/content/repositories/releases</url>
 				</repository>
 			</distributionManagement>
 		</profile>
@@ -172,6 +168,11 @@
 	            <groupId>org.apache.commons</groupId>
 	            <artifactId>commons-collections4</artifactId>
 	            <version>${commons-collections4.version}</version>
+	        </dependency>
+	        <dependency>
+	        	<groupId>commons-io</groupId>
+	        	<artifactId>commons-io</artifactId>
+	        	<version>${commons-io.version}</version>
 	        </dependency>
 	        
 	        <dependency>
