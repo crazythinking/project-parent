@@ -27,10 +27,6 @@
 		<!-- drools -->
 		<!-- <drools.version>5.6.0.Final</drools.version> -->
 
-		<!-- mina -->
-		<!-- <mina.core.version>2.0.7</mina.core.version>
-		<mina.integration.spring.version>1.1.7</mina.integration.spring.version> -->
-
 		<!-- maven -->
 		<maven.plugin.api.version>2.2.1</maven.plugin.api.version>
 		<maven.project.version>2.2.1</maven.project.version>
@@ -38,14 +34,18 @@
 		<apt-maven-plugin.version>1.1.3</apt-maven-plugin.version>
 
 		<!-- apache commons -->
+		<commons-beanutils.version>1.9.3</commons-beanutils.version>
 		<commons.daemon.version>1.0.10</commons.daemon.version>
 		<commons-email.version>1.3.2</commons-email.version>
 		<commons-collections4.version>4.2</commons-collections4.version>
+		<commons-io.version>2.6</commons-io.version>
+		
+		<guava.version>27.0-jre</guava.version>
 
 		<ibator.version>1.2.1.681</ibator.version>
 
 		<!-- LMAX -->
-		<disruptor.version>3.3.5</disruptor.version>
+		<disruptor.version>3.3.7</disruptor.version>
 		
 		<!-- RocketMQ -->
 		<rocketmq.version>4.3.0</rocketmq.version>
@@ -127,19 +127,12 @@
 				<version>${drools.version}</version>
 			</dependency> -->
 
-			<!-- MINA -->
-			<!-- <dependency>
-				<groupId>org.apache.mina</groupId>
-				<artifactId>mina-core</artifactId>
-				<version>${mina.core.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.mina</groupId>
-				<artifactId>mina-integration-spring</artifactId>
-				<version>${mina.integration.spring.version}</version>
-			</dependency> -->
-			
 			<!-- apache commons 库 -->
+			<dependency>
+	            <groupId>commons-beanutils</groupId>
+	            <artifactId>commons-beanutils</artifactId>
+	            <version>${commons-beanutils.version}</version>
+	        </dependency>
 			<dependency>
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
@@ -171,6 +164,17 @@
 	            <artifactId>commons-collections4</artifactId>
 	            <version>${commons-collections4.version}</version>
 	        </dependency>
+	        <dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>${commons-io.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
 	        
 	        <dependency>
 			    <groupId>org.apache.rocketmq</groupId>
@@ -275,6 +279,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-properties-migrator</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -292,8 +302,6 @@
 		</resources>
 		<pluginManagement>
 			<plugins>
-				<!-- Spring Boot’s Maven Plugin -->
-				<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> </plugin> -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
