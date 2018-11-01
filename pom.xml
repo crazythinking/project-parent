@@ -239,15 +239,7 @@
 			<version>${disruptor.version}</version>
 		</dependency>
 
-		<!--TODO 需要重新整理，是否spring-boot-starter-test代替以下配置 测试相关 -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-		</dependency>
+		<!-- 测试相关 -->
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
@@ -256,10 +248,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
 		</dependency>
 
 		<!--TODO 需要重新整理，是否spring-boot-starter-aop AspectJ代替以下配置 基本上都会用到AspectJ，这里统一依赖-->
