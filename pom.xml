@@ -264,10 +264,12 @@
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
 		
-		<dependency>
+		<!-- maven编译时会与aspectJ产生冲突,未找到解决方案,冲突如下: -->
+		<!--  [WARNING] You aren't using a compiler supported by lombok, so lombok will not work and has been disabled.-->
+		<!-- <dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
-		</dependency>
+		</dependency> -->
 		
 		<!-- 用于检查spring boot 1.x 迁移到 2.x的冲突；迁移完成后可以去掉 -->
 		<dependency>
@@ -314,7 +316,7 @@
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>aspectj-maven-plugin</artifactId>
 					<version>${aspectj.maven.plugin.version}</version>
-					<dependencies><!-- 1.10 默认依赖1.8.9的aspectj，这里升级到1.8.10，与spring保持一致 -->
+					<dependencies><!-- 1.10 默认依赖1.8.9的aspectj，这里升级到1.8.13，与spring保持一致 -->
 						<dependency>
 							<groupId>org.aspectj</groupId>
 							<artifactId>aspectjrt</artifactId>
