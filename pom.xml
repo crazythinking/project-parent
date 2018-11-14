@@ -281,7 +281,6 @@
 	</dependencies>
 	<build>
 		<resources>
-			<!-- 由于gwt-maven-plugin:resources的bug，现在*.properties还需要通过这样的配置来放进去 -->
 			<resource>
 				<directory>src/main/resources</directory>
 			</resource>
