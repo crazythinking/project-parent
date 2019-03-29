@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.spring.platform</groupId>
 		<artifactId>platform-bom</artifactId>
-		<version>Brussels-SR11</version>
+		<version>Brussels-SR15</version>
 		<relativePath />
 	</parent>
 
@@ -66,26 +66,58 @@
 
 	<profiles>
 		<profile>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<id>zebra</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <!--<id>repo</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>repo</id>
+                    <url>https://dev.aceistar.com:18081/nexus/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>repo</id>
+                    <url>https://dev.aceistar.com:18081/nexus/content/repositories/releases</url>
+                </repository>
+            </distributionManagement>-->
+            <id>nexus</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>rdc-snapshots</id>
+                    <url>https://repo.rdc.aliyun.com/repository/51155-snapshot-Mp8thg/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>rdc-releases</id>
+                    <url>https://repo.rdc.aliyun.com/repository/51155-release-Z3WSjp/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+		<!-- 支持混淆的Profile，不生成source -->
+		<!-- <profile>
+			<id>obfuscated</id>
 			<distributionManagement>
 				<snapshotRepository>
-					<id>zebra</id>
-					<url>http://118.242.36.102:6474/nexus/content/repositories/snapshots</url>
+					<id>rdc-snapshots</id>
+                    <url>https://repo.rdc.aliyun.com/repository/51155-snapshot-Mp8thg/</url>
 				</snapshotRepository>
 				<repository>
-					<id>zebra</id>
-					<url>http://118.242.36.102:6474/nexus/content/repositories/releases</url>
+					<id>rdc-releases</id>
+                    <url>https://repo.rdc.aliyun.com/repository/51155-release-Z3WSjp/</url>
 				</repository>
 			</distributionManagement>
-		</profile>
-		<!-- 支持混淆的Profile，不生成source -->
-		<!-- <profile> <id>obfuscated</id> <distributionManagement> <snapshotRepository> <id>repo</id> <url>http://101.132.40.129:18081/nexus/content/repositories/outter-snapshots</url> 
-			</snapshotRepository> <repository> <id>repo</id> <url>http://101.132.40.129:18081/nexus/content/repositories/outter-releases</url> </repository> </distributionManagement> 
-			<build> <pluginManagement> <plugins> <plugin> <artifactId>maven-source-plugin</artifactId> <configuration> <skipSource>true</skipSource> </configuration> 
-			</plugin> </plugins> </pluginManagement> </build> </profile> -->
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>maven-source-plugin</artifactId>
+							<configuration>
+								<skipSource>true</skipSource>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile> -->
 	</profiles>
 
 	<dependencyManagement>
@@ -220,23 +252,28 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 		</dependency>
-		<dependency><!-- 桥接：告诉Slf4j使用Log4j2 -->
+		<!-- 桥接：告诉Slf4j使用Log4j2 -->
+		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 		</dependency>
-		<dependency> <!-- 桥接：告诉commons logging使用Log4j2 -->
+		<!-- 桥接：告诉commons logging使用Log4j2 -->
+		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
 		</dependency>
-		<dependency> <!-- 桥接：告诉jdk-logging使用Log4j2 -->
+		<!-- 桥接：告诉jdk-logging使用Log4j2 -->
+		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jul</artifactId>
 		</dependency>
-		<dependency><!--web工程需要包含log4j-web，非web工程不需要 -->
+		<!-- web工程需要包含log4j-web，非web工程不需要 -->
+		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-web</artifactId>
 		</dependency>
-		<dependency><!--需要使用log4j2的AsyncLogger需要包含disruptor -->
+		<!--需要使用log4j2的AsyncLogger需要包含disruptor -->
+		<dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
 			<version>${disruptor.version}</version>
